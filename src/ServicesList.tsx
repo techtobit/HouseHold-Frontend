@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react'
 import { FaUser } from "react-icons/fa6";
 import { IoLogoUsd } from "react-icons/io5";
 import { ImPriceTags } from "react-icons/im";
-import { FaAngleRight } from "react-icons/fa6";
 import { Link } from 'react-router-dom';
 
 interface CategorySlugState {
@@ -92,7 +91,7 @@ const Services: React.FC = () => {
 	}
 
 
-	const ratings = {
+	const ratings : Record<number, string>= {
 		1: '⭐',
 		2: '⭐⭐',
 		3: '⭐⭐⭐',

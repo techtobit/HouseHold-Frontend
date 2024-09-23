@@ -1,9 +1,9 @@
 import axios from 'axios';
-import React, { useContext } from 'react'
+import React from 'react'
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 
-import {useAppDispatch ,useAppSelector } from '../redux/TypeHoock';
+import {useAppDispatch } from '../redux/TypeHoock';
 import { setAuthToken } from '../redux/Actions';
 
 
@@ -14,10 +14,6 @@ interface LogInFormState {
 	password: string
 }
 
-interface FetchLoginData {
-	userId: string | number | null,
-	token: string
-}
 
 const LogIn: React.FC = () => {
 	const { register, handleSubmit, setError, formState: { errors } } = useForm<LogInFormState>()
@@ -34,8 +30,10 @@ const LogIn: React.FC = () => {
 					'Content-Type': 'application/json'
 				},
 			})
-			if (!response) {
-				console.log('no response');
+			if (response.status > 200) {
+				setError( `root.${response.status}`, {
+					type: response.statusText,
+				})
 
 			}
 			else {
@@ -46,6 +44,8 @@ const LogIn: React.FC = () => {
 				localStorage.setItem('user_id', user_id)
 				dispatch(setAuthToken(token));
 				navigate('/user/dashboard/');
+				console.log(response);
+				
 
 			}
 		} catch (error) {

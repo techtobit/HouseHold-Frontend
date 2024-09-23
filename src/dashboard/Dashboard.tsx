@@ -7,10 +7,9 @@ import { AiOutlineShopping, AiOutlineShoppingCart, AiFillInfoCircle, AiTwotoneAp
 import Users from './Users';
 import Products from './Products';
 import Orders from './Orders';
-import { useAppDispatch, useAppSelector } from '../redux/TypeHoock';
+import {  useAppSelector } from '../redux/TypeHoock';
 import { setAuthToken } from '../redux/Actions';
 import logo from '../assets/hs.png';
-import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../redux/Store';
 import { setDashboardBtnActive, setDashboardAsideBtn } from '../redux/dashboardSlice';
@@ -30,21 +29,13 @@ interface userDataType {
 }
 
 
-interface UserRole {
-	user_id: number,
-	is_staff: boolean,
-}
-
 const Dashboard: React.FC = () => {
 
   const dispatch = useDispatch()
-	// const navigation = useNavigate()
-  // const dashboardBtnActive= useSelector((state: RootState)=> state.dashboard.isActive)
   const activeAsideBtn = useSelector((state: RootState)=> state.dashboard.activeAsideBtn)
 	const authToken = useAppSelector((state) => state.auth.token)
 	const token = null;
 	const [profileData, setProfileData] = useState<userDataType>()
-	// const [asideNavItem, setasideNavItem] = useState('dashboard')
 	const user_id = localStorage.getItem('user_id')
 
 

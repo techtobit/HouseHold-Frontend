@@ -4,7 +4,7 @@ import ApexCharts, { ApexOptions } from 'apexcharts';
 const LevelsChart: React.FC = () => {
   const options: ApexOptions = {
     xaxis: {
-      show: true,
+      // show: true,
       categories: ['01 Feb', '02 Feb', '03 Feb', '04 Feb', '05 Feb', '06 Feb', '07 Feb'],
       labels: {
         show: true,

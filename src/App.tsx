@@ -11,9 +11,6 @@ import CartList from './dashboard/CartList'
 import LogIn from './auth/LogIn'
 import PrivatRoute from './auth/PrivatRoute'
 import HomeOutlet from './home/HomeOutlet'
-import Footer from './home/Footer'
-import HeroBanner from './home/HeroBanner'
-import { Toast } from 'flowbite-react'
 import { Toaster } from 'react-hot-toast'
 
 

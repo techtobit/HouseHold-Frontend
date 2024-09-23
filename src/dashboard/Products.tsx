@@ -2,7 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 
 const Products:React.FC=()=> {
-	const [allServices, setAllServices] = useState()
+	const [allServices, setAllServices] = useState<[]>([])
 	const [isDropDownOpen, setIsDropDownOpen] = useState(null)
 
 	const getServices = async () => {

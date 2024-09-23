@@ -1,10 +1,11 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import logo from '../assets/hs.png'
+import toast from 'react-hot-toast'
 
 const  Users:React.FC =()=> {
 
-	const [allUsers, setAllUsers] = useState()
+	const [allUsers, setAllUsers] = useState<[]>([])
 	const [isDropDownOpen, setIsDropDownOpen] = useState(null)
 
 	const authToken = localStorage.getItem('authToken')
@@ -27,6 +28,9 @@ const  Users:React.FC =()=> {
 				{ is_staff, is_superuser },
 				{ headers: { Authorization: `Bearer ${authToken}` } }
 			);
+			if(!response){
+				toast.error('Faild to update Role')
+			}
 			getAllUsers()
 			// console.log('Role Update', response.data);
 
@@ -89,7 +93,7 @@ const  Users:React.FC =()=> {
 
 				{
 					allUsers?.map((user: any, idx: any) =>
-						<tr key={user?.id} className=" bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+						<tr key={idx} className=" bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
 							<td className="w-4 p-4">
 								{user?.id}
 							</td>

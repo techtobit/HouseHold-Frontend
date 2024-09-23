@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { FaUser } from "react-icons/fa6";
 import { IoLogoUsd } from "react-icons/io5";
 import { ImPriceTags } from "react-icons/im";
@@ -13,15 +13,11 @@ import toast from 'react-hot-toast';
 import { AiFillLinkedin, AiFillYoutube, AiFillGithub, AiOutlineGlobal } from "react-icons/ai";
 
 
-interface CategorySlugState {
-	category: string,
-}
-
 interface ServicesDetailsState {
 	id: number,
 	seller: number,
 	service_title: string,
-	categories: Array<CategorySlugState>,
+	categories: any,
 	price: number,
 	image: any,
 	discription: string,
@@ -207,7 +203,7 @@ const ServiceDetials: React.FC = () => {
 						</select>
 						<input id='serviceId' type="number" value={service?.id} hidden />
 						<label htmlFor="body" className="block my-2 text-sm font-medium text-gray-900 dark:text-white">Your message</label>
-						<textarea id="body" required rows="4" className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your thoughts here..."></textarea>
+						<textarea id="body" required  className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your thoughts here..."></textarea>
 						<button type="submit" className="my-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
 					</form>
 
@@ -221,14 +217,14 @@ const ServiceDetials: React.FC = () => {
 								<div className="flex items-center mb-4  ">
 									<img className="w-10 h-10 me-4 rounded-full" src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80" alt="" />
 									<div className="font-medium dark:text-white">
-										<p>Jese Leos <time datetime="2014-08-16 19:00" className="block text-sm text-gray-500 dark:text-gray-400">Joined on August 2014</time></p>
+										<p>Jese Leos <time dateTime="2014-08-16 19:00" className="block text-sm text-gray-500 dark:text-gray-400">Joined on August 2014</time></p>
 									</div>
 								</div>
 								<div className="flex items-center mb-1 space-x-1 rtl:space-x-reverse">
 									<StarRate rating={review.rating || 0} />
 									<h3 className="ms-2 text-sm font-semibold text-gray-900 dark:text-white">Thinking to buy another one!</h3>
 								</div>
-								<footer className="mb-5 text-sm text-gray-500 dark:text-gray-400"><p>Reviewed in the United Kingdom on <time datetime="2017-03-03 19:00">March 3, 2017</time></p></footer>
+								<footer className="mb-5 text-sm text-gray-500 dark:text-gray-400"><p>Reviewed in the United Kingdom on <time dateTime="2017-03-03 19:00">March 3, 2017</time></p></footer>
 								<p className="mb-2 text-gray-500 dark:text-gray-400">{review?.body}</p>
 								<a href="#" className="block mb-5 text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">Read more</a>
 								<aside>
