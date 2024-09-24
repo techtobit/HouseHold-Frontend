@@ -33,7 +33,7 @@ const CartList: React.FC = () => {
 	function deleteCart(id: number) {
 
 		try {
-			axios.delete(`https://household-backend-a4k7.onrender.com/orders/cart/${id}`)
+			axios.delete(`https://household-backend-a4k7.onrender.com/orders/cart/${id}/`)
 				.then(response => {
 
 					fetchCarts()

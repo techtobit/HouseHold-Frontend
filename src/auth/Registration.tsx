@@ -22,6 +22,7 @@ const Registration: React.FC = () => {
 	const { registrationType } = useParams<{ registrationType: string }>();
 	const navigate = useNavigate()
 
+	
 	const onSubmit = async (data: RegistrationFromState) => {
 		try {
 			const response = await axios.post(`https://household-backend-a4k7.onrender.com/auth/${registrationType}/`, data, {

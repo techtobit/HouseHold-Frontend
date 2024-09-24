@@ -28,7 +28,7 @@ function App() {
             <Route path='/user/dashboard/' element={<Dashboard/>}/>
           </Route>
           <Route path='services/' element={<ServicesList/>}/>
-          <Route path='services/:id' element={<ServiceDetials/>}/>
+          <Route path='services/:id/' element={<ServiceDetials/>}/>
           <Route path='services/cartList/' element={<CartList/>}/>
         </Routes>
       </Router>

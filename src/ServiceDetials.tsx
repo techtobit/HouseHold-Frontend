@@ -56,7 +56,7 @@ const ServiceDetials: React.FC = () => {
 	useEffect(() => {
 		const fetchServices = async () => {
 			try {
-				const response = await axios.get(`https://household-backend-a4k7.onrender.com/services/list/${id}`)
+				const response = await axios.get(`https://household-backend-a4k7.onrender.com/services/list/${id}/`)
 				setService(response.data)
 			} catch (error) {
 				console.error(error)
@@ -124,7 +124,7 @@ const ServiceDetials: React.FC = () => {
 			}
 		}
 		fetchReview()
-	}, [])
+	}, [servicesReview])
 
 
 	const handelSubmitReviw = (event:any)=>{
@@ -150,6 +150,8 @@ const ServiceDetials: React.FC = () => {
 			}
 			else {
 				toast.success('Thanks for giving review')
+				event.target.rating.value=''
+				event.target.body.value=''
 				
 			}
 			console.log("review - response -", response);

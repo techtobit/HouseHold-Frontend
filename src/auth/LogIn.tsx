@@ -22,6 +22,7 @@ const LogIn: React.FC = () => {
 
 
 	const navigate = useNavigate()
+
 	const onSubmit = async (data: LogInFormState) => {
 		try {
 			const url = `https://household-backend-a4k7.onrender.com/auth/login/`
