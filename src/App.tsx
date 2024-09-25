@@ -12,6 +12,7 @@ import LogIn from './auth/LogIn'
 import PrivatRoute from './auth/PrivatRoute'
 import HomeOutlet from './home/HomeOutlet'
 import { Toaster } from 'react-hot-toast'
+import ApiList from './utils/ApiList'
 
 
 
@@ -22,6 +23,7 @@ function App() {
       <NavBar />
         <Routes>
           <Route path='/' element={<HomeOutlet/>}/>
+          <Route path='api_endpoints' element={<ApiList/>} />
           <Route path="/user/create/:registrationType"  element={<Registration/>}/>
           <Route path="/user/login/"  element={<LogIn/>}/>
           <Route element={<PrivatRoute/>}>
