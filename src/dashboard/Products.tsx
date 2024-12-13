@@ -7,7 +7,7 @@ const Products:React.FC=()=> {
 
 	const getServices = async () => {
 		try {
-			const response = await axios.get(`https://household-backend-a4k7.onrender.com/services/list/`)
+			const response = await axios.get(`https://houshold-backend-recoverd.onrender.com/services/list/`)
 			setAllServices(response.data)
 
 		} catch (error) {
