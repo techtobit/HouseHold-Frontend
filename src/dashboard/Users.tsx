@@ -12,7 +12,7 @@ const  Users:React.FC =()=> {
 
 	const getAllUsers = async () => {
 		try {
-			const response = await axios.get(`https://houshold-backend-recoverd.onrender.com/auth/users/`)
+			const response = await axios.get(`https://houshold-api.vercel.app/auth/users/`)
 			setAllUsers(response.data)
 
 		} catch (error) {
@@ -24,7 +24,7 @@ const  Users:React.FC =()=> {
 	const userRoleUpdate = async (id: number, is_staff: boolean, is_superuser: boolean) => {
 		try {
 			const response = await axios.patch(
-				`https://houshold-backend-recoverd.onrender.com/auth/users/${id}/update_role/`,
+				`https://houshold-api.vercel.app/auth/users/${id}/update_role/`,
 				{ is_staff, is_superuser },
 				{ headers: { Authorization: `Bearer ${authToken}` } }
 			);

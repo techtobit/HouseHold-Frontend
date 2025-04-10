@@ -25,7 +25,7 @@ const LogIn: React.FC = () => {
 
 	const onSubmit = async (data: LogInFormState) => {
 		try {
-			const url = `https://houshold-backend-recoverd.onrender.com/auth/login/`
+			const url = `https://houshold-api.vercel.app/auth/login/`
 			const response = await axios.post(url, data, {
 				headers: {
 					'Content-Type': 'application/json'

@@ -7,7 +7,7 @@ const Products:React.FC=()=> {
 
 	const getServices = async () => {
 		try {
-			const response = await axios.get(`https://houshold-backend-recoverd.onrender.com/services/list/`)
+			const response = await axios.get(`https://houshold-api.vercel.app/services/list/`)
 			setAllServices(response.data)
 
 		} catch (error) {

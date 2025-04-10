@@ -31,7 +31,7 @@ const Services: React.FC = () => {
 	useEffect(() => {
 		const fetchServices = async () => {
 			try {
-				const response = await axios.get('https://houshold-backend-recoverd.onrender.com/services/list/')
+				const response = await axios.get('https://houshold-api.vercel.app/services/list/')
 				setServicesList(response.data)
 
 			} catch (error) {
@@ -47,7 +47,7 @@ const Services: React.FC = () => {
 	useEffect(() => {
 		const fetchCategories = async () => {
 			try {
-				const response = await axios.get('https://houshold-backend-recoverd.onrender.com/services/categories/')
+				const response = await axios.get('https://houshold-api.vercel.app/services/categories/')
 				setCategorySlug(response.data)
 			} catch (error) {
 				console.error(error)
@@ -60,7 +60,7 @@ const Services: React.FC = () => {
 
 	const fetchFilteredCategory = async (categoryName: any, rating: any) => {
 		try {
-			const response = await axios.get(`https://houshold-backend-recoverd.onrender.com/services/list/category/${categoryName}/`, {
+			const response = await axios.get(`https://houshold-api.vercel.app/services/list/category/${categoryName}/`, {
 				params:{
 					avg_rating: rating,
 				}

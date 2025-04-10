@@ -56,7 +56,7 @@ const ServiceDetials: React.FC = () => {
 	useEffect(() => {
 		const fetchServices = async () => {
 			try {
-				const response = await axios.get(`https://houshold-backend-recoverd.onrender.com/services/list/${id}/`)
+				const response = await axios.get(`https://houshold-api.vercel.app/services/list/${id}/`)
 				setService(response.data)
 			} catch (error) {
 				console.error(error)
@@ -78,7 +78,7 @@ const ServiceDetials: React.FC = () => {
 		console.log('cartData', cartData);
 
 		try {
-			const response = await axios.post(`https://houshold-backend-recoverd.onrender.com/orders/cart/`, cartData, {
+			const response = await axios.post(`https://houshold-api.vercel.app/orders/cart/`, cartData, {
 				headers: {
 					"Content-Type": "application/json"
 				}
@@ -102,7 +102,7 @@ const ServiceDetials: React.FC = () => {
 	useEffect(() => {
 		const fetchServicesSeller = async () => {
 			try {
-				const response = await axios.get(`https://houshold-backend-recoverd.onrender.com/auth/seller_profile/?username=${username}`)
+				const response = await axios.get(`https://houshold-api.vercel.app/auth/seller_profile/?username=${username}`)
 				setServicesSeller(response.data[0])
 			} catch (error) {
 				console.error(error)
@@ -115,7 +115,7 @@ const ServiceDetials: React.FC = () => {
 	useEffect(() => {
 		const fetchReview = async () => {
 			try {
-				const response = await axios.get(`https://houshold-backend-recoverd.onrender.com/services/review/?service=${id}`)
+				const response = await axios.get(`https://houshold-api.vercel.app/services/review/?service=${id}`)
 				setServicesReview(response.data)
 				console.log('Review List-', response.data);
 
@@ -140,7 +140,7 @@ const ServiceDetials: React.FC = () => {
 		}
 
 		try {
-			const response =axios.post(`https://houshold-backend-recoverd.onrender.com/services/review/`, reviewData, {
+			const response =axios.post(`https://houshold-api.vercel.app/services/review/`, reviewData, {
 				headers: {
 					"Content-Type": "application/json"
 				}

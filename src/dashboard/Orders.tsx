@@ -26,7 +26,7 @@ const Orders: React.FC = () => {
 	// Fetch Orders
 	const fetchOrders = async () => {
 		try {
-			const response = await axios.get<Order[]>('https://houshold-backend-recoverd.onrender.com/orders/order/');
+			const response = await axios.get<Order[]>('https://houshold-api.vercel.app/orders/order/');
 			setOrders(response.data);
 		} catch (error) {
 			console.error(error);
@@ -36,7 +36,7 @@ const Orders: React.FC = () => {
 	// Fetch Carts
 	const fetchCarts = async () => {
 		try {
-			const response = await axios.get<Cart[]>('https://houshold-backend-recoverd.onrender.com/orders/cart/');
+			const response = await axios.get<Cart[]>('https://houshold-api.vercel.app/orders/cart/');
 			setCarts(response.data);
 		} catch (error) {
 			console.error(error);

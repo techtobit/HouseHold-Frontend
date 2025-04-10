@@ -55,7 +55,7 @@ const Dashboard: React.FC = () => {
 
 	const getProfileData = async () => {
 		try {
-			const response = await axios.get(`https://houshold-backend-recoverd.onrender.com/auth/users/${user_id}/`)
+			const response = await axios.get(`https://houshold-api.vercel.app/auth/users/${user_id}/`)
 			setProfileData(response.data)
 
 		} catch (error) {

@@ -18,7 +18,7 @@ const CartList: React.FC = () => {
 
 	const fetchCarts = async () => {
 		try {
-			const response = await axios.get(`https://houshold-backend-recoverd.onrender.com/orders/cart/`)
+			const response = await axios.get(`https://houshold-api.vercel.app/orders/cart/`)
 			setCartList(response.data)
 		} catch (error) {
 			console.error(error)
@@ -33,7 +33,7 @@ const CartList: React.FC = () => {
 	function deleteCart(id: number) {
 
 		try {
-			axios.delete(`https://houshold-backend-recoverd.onrender.com/orders/cart/${id}/`)
+			axios.delete(`https://houshold-api.vercel.app/orders/cart/${id}/`)
 				.then(response => {
 
 					fetchCarts()
@@ -54,7 +54,7 @@ const CartList: React.FC = () => {
 		}
 
 		try {
-			const response = axios.post(`https://houshold-backend-recoverd.onrender.com/orders/order/`, data, {
+			const response = axios.post(`https://houshold-api.vercel.app/orders/order/`, data, {
 				headers: {
 					"Content-Type": "application/json"
 				}

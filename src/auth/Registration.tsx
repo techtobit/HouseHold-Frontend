@@ -25,7 +25,7 @@ const Registration: React.FC = () => {
 	
 	const onSubmit = async (data: RegistrationFromState) => {
 		try {
-			const response = await axios.post(`https://houshold-backend-recoverd.onrender.com/auth/${registrationType}/`, data, {
+			const response = await axios.post(`https://houshold-api.vercel.app/auth/${registrationType}/`, data, {
 				headers: {
 					"Content-Type": "application/json"
 				},

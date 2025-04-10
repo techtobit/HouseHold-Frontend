@@ -1,6 +1,6 @@
 // import axios from "axios";
 
-// const BASE_URL='https://houshold-backend-recoverd.onrender.com/';
+// const BASE_URL='https://houshold-api.vercel.app/';
 
 
 // const apiClient = axios.create({
