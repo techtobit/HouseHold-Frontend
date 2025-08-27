@@ -1,50 +1,27 @@
-# React + TypeScript + Vite
+# Household Service Providing Platform #
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Household Service Providing Platform is a platform where a user/client can order services like house shifting,home cleaning etc. Here users can have two roles : Admin and Client. Admin can add new admin and cancel orders. Client can order services,update his profile and cancel his order.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+You are required to implement the following features for this project:
 
-## Expanding the ESLint configuration
+#### User Authentication: ####
+User registration and login.
+User profile management.
+User roles: Admin, Client.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+#### Admin Creation: ####
+Admin can make other user admin.
 
-- Configure the top-level `parserOptions` property like this:
+#### Client Profile: ####
+Display client information and show service history.
+Client bios with profile pictures and social media links.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+#### Add to Cart: ####
+Users can add their service to a cart to order.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+#### Reviews and Ratings: ####
+Users can leave ratings for services they receive, out of 5.
+Display average ratings and sort services by rating.
+Deployment and Submit: ( 10 Marks )
+Deploy the Household Service Providing Platform on a secure and scalable hosting platform.
