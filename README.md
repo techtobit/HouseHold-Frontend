@@ -6,9 +6,9 @@ Household Service Providing Platform is a platform where a user/client can order
 You are required to implement the following features for this project:
 
 #### User Authentication: ####
-User registration and login.
-User profile management.
-User roles: Admin, Client.
+* User registration and login.
+* User profile management.
+*User roles: Admin, Client.
 
 #### Admin Creation: ####
 Admin can make other user admin.
